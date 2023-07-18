@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 
 public class FeignClientConfig {
-    @Value("{$cat-api.key}")
+    @Value("${cat-api.key}")
     private String apiKey;
 
     @Bean

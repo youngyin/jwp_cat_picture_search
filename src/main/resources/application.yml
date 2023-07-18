@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: ${MYSQL-URL}
+    username: ${MYSQL-USERNAME}
+    password: ${MYSQL-PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+cat-api:
+  key: ${CATAPI-KEY}
+  url: ${CATAPI-URL}
+
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace

@@ -1,14 +1,15 @@
 version: '3'
 services:
-  mysql:
-    image: mysql:8.0.33 # 2023. 04. 30 기준으로 가장 최신버전
-    container_name: cat-picture-db
-    ports:
-      - 3306:3306 # HOST:CONTAINER
+  db:
+    container_name: cat_image_db
+    image: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: admin
-    command:
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
+      MYSQL_DATABASE: cat_image
+      MYSQL_USERNAME: admin
+      MYSQL_ROOT_PASSWORD: password!!
+      TZ: Asia/Seoul
+    ports:
+      - "3306:3306"
     volumes:
-      - /Volumes/Data/mySql:/var/lib/mysql
+      - ./mysqldata:/var/lib/mysql
+    restart: no

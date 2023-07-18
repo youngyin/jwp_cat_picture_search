@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name = "BreedClient", url = "https://api.thecatapi.com/v1")
+@FeignClient(name = "BreedClient", url = "${cat-api.url}")
 public interface BreedClient {
     @GetMapping("/breeds")
-    List<BreedResponse> getBreedList(@RequestParam("limit") int limit);
+    List<BreedResponse> getBreedList(
+            @RequestParam("limit") int limit,
+            @RequestParam("page") int page);
 }

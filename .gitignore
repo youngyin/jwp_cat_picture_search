@@ -251,7 +251,7 @@ out/
 .vscode/
 
 ### API KEY ####
-/src/main/resources/api-key.properties
+/src/main/resources/key.properties
 
 ### MySql ###
 /mysqldata/*
