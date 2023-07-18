@@ -1,11 +1,10 @@
 package com.yin.catsearch.domain.service;
 
 import com.yin.catsearch.common.exception.ApiException;
+import com.yin.catsearch.common.exception.ApiStatus;
 import com.yin.catsearch.domain.dto.ImageDetailDto;
 import com.yin.catsearch.domain.dto.ImageDto;
 import com.yin.catsearch.domain.repository.ImageRepository;
-import com.yin.catsearch.feign.client.ImageClient;
-import com.yin.catsearch.feign.dto.ImageResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +33,9 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     public ImageDetailDto searchById(String imageId) throws Exception {
-         return imageRepository.findById(imageId).map(ImageDetailDto::new).orElseThrow(ApiException::new);
+         return imageRepository
+                 .findById(imageId)
+                 .map(ImageDetailDto::new)
+                 .orElseThrow(()->new ApiException(ApiStatus.E1000));
     }
 }
