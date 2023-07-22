@@ -1,0 +1,24 @@
+== GET
+=== randomImages
+==== param
+include::{snippets}/get-randomImages/response-fields.adoc[]
+==== request
+include::{snippets}/get-randomImages/http-request.adoc[]
+==== response
+include::{snippets}/get-randomImages/http-response.adoc[]
+
+=== searchByBreed
+==== param
+include::{snippets}/get-searchByBreed/response-fields.adoc[]
+==== request
+include::{snippets}/get-searchByBreed/http-request.adoc[]
+==== response
+include::{snippets}/get-searchByBreed/http-response.adoc[]
+
+=== searchById
+==== param
+include::{snippets}/get-searchById/response-fields.adoc[]
+==== request
+include::{snippets}/get-searchById/http-request.adoc[]
+==== response
+include::{snippets}/get-searchById/http-response.adoc[]

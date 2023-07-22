@@ -16,16 +16,16 @@ public class ImageServiceImpl implements ImageService {
     private final ImageRepository imageRepository;
 
     @Override
-    public List<ImageDto> getRandomImageList() {
-        return imageRepository.getRandomImageList(50)
+    public List<ImageDto> getRandomImageList(int limit) {
+        return imageRepository.getRandomImageList(limit)
                 .stream()
                 .map(ImageDto::new)
                 .toList();
     }
 
     @Override
-    public List<ImageDto> searchByBreed(String breed) {
-        return imageRepository.findByName(breed)
+    public List<ImageDto> searchByBreed(String breed, int limit) {
+        return imageRepository.findByName(breed, limit)
                 .stream()
                 .map(ImageDto::new)
                 .toList();

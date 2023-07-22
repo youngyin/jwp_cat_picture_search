@@ -15,4 +15,8 @@ public class ImageDto {
         setUrl(imageVo.getUrl());
         setName(imageVo.getName());
     }
+
+    public ImageDto() {
+
+    }
 }

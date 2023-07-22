@@ -18,12 +18,12 @@ public class ImageController {
 
     @GetMapping("/random50")
     public ResponseEntity<ApiDataListResponse<ImageDto>> getRandomImages() {
-        return ResponseEntity.ok(new ApiDataListResponse<>(catImageService.getRandomImageList()));
+        return ResponseEntity.ok(new ApiDataListResponse<>(catImageService.getRandomImageList(50)));
     }
 
     @GetMapping("/search")
     public ResponseEntity<ApiDataListResponse<ImageDto>> searchByBreed(@RequestParam("q") String breed) {
-        return ResponseEntity.ok(new ApiDataListResponse<>(catImageService.searchByBreed(breed)));
+        return ResponseEntity.ok(new ApiDataListResponse<>(catImageService.searchByBreed(breed, 100)));
     }
 
     @GetMapping("/{id}")
